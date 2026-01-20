@@ -6,6 +6,7 @@ So i wanted to make a trolling tool (still discord related lol), also just tryin
 1. Disclaimer
 2. Description (but better)
 3. Tutorial
+4. Note
 
 ## Disclaimer
 
@@ -28,7 +29,6 @@ StarSpammer is a trolling tool with a command-line interface used to spam discor
 4. Replace `MESSAGE CONTENT` with the content of the message *the-message-has-to-be-sent-with-no-spaces-(like-this), and with no embeds (but you can send gifs/urls)
 5. Click enter!
 
-# notes
+# Note
 
-[] add inf messages
-[] fix the no spaces problem
+after 41 messages the program will pause for 10 seconds to try to avoid rate limiting (if youre asking why exactly 41 i have no clue it just starts rate limiting there)
