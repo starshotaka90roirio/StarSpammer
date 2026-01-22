@@ -14,7 +14,7 @@ By using this tool, you acknowledge that YOU are using discord's API, and take t
 
 # Description
 
-StarSpammer is a trolling tool with a command-line interface used to spam discord webhooks. You can set the limit to how many messages you want, and the message content you want to send*.
+StarSpammer is a trolling tool with a command-line interface used to spam discord webhooks. You can set the limit to how many messages you want, and the message content you want to send.
 
 # Tutorial
 ## Command
