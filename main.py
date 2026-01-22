@@ -46,13 +46,12 @@ while True:
         sys.exit()
     else:
        continue
-    break
 
 
-def main():
+def spam():
 
     data = {
-        "content": f"{msgcont}",
+        "content": msgcont,
         "attachments": []
     }
 
@@ -70,6 +69,5 @@ def main():
         else:
             print(f"[INFO/ERROR] Message {i+1} not sent. Status code: {response.status_code}")
 
-if __name__ == "__main__":
+spam()
 
-    main()
