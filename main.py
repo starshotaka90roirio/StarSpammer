@@ -61,8 +61,9 @@ def main():
     for i in range(msgamt):
         response = requests.post(webhook, json=data)
         if response.status_code == 204:
-            print(f"[INFO/SENT] Message {i+1} succesfully sent.")
+            print(f"[INFO/SENT] Message {i+1} successfully sent.")
             if i == 41:
+                # tried to fix rate limiting here but didnt work as i planned lol  
                 time.sleep(10)
 
     
@@ -70,4 +71,5 @@ def main():
             print(f"[INFO/ERROR] Message {i+1} not sent. Status code: {response.status_code}")
 
 if __name__ == "__main__":
+
     main()
