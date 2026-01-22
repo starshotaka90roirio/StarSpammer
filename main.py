@@ -62,7 +62,7 @@ def spam():
         if response.status_code == 204:
             print(f"[INFO/SENT] Message {i+1} successfully sent.")
             if i == 41:
-                # tried to fix rate limiting here but didnt work as i planned lol  
+                # tried to fix rate limiting here but didnt work as i planned lolol  
                 time.sleep(10)
 
     
