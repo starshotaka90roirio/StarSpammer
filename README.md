@@ -26,7 +26,7 @@ StarSpammer is a trolling tool with a command-line interface used to spam discor
 1. Run the command
 2. Replace `WEBHOOK_URL` with the url of the webhook
 3. Replace `AMOUNT_OF_MESSAGES` with the amount of messages (in integers)
-4. Replace `MESSAGE CONTENT` with the content of the message *the-message-has-to-be-sent-with-no-spaces-(like-this), and with no embeds (but you can send gifs/urls)
+4. Replace `MESSAGE CONTENT` with the content of the message (to use spaces type the message in qoutation marks, python main.py ... -cont "message content")
 5. Click enter!
 
 ### Note
