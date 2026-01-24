@@ -28,7 +28,3 @@ StarSpammer is a trolling tool with a command-line interface used to spam discor
 3. Replace `AMOUNT_OF_MESSAGES` with the amount of messages (in integers, for infinite messages just type "inf")
 4. Replace `MESSAGE CONTENT` with the content of the message (to use spaces type the message in qoutation marks, python main.py ... -cont "message content")
 5. Click enter!
-
-### Note
-
-after 41 messages the program will pause for 10 seconds to try to avoid rate limiting (if youre asking why exactly 41 i have no clue it just starts rate limiting there)
