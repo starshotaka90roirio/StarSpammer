@@ -4,11 +4,21 @@ import argparse
 import sys
 import time
 
-#parser stuff
+
+# allow for infinite messages cuz it breaks otherwise
+def msgamt_type(val):
+    if val == "inf":
+        return val
+    if val.isdigit():
+        return int(val)
+    raise argparse.ArgumentTypeError("msgamt must be an integer or 'inf'")
+
+
+#parser
 parser = argparse.ArgumentParser()
 
 parser.add_argument("-wh", type=str, required=True, help="webhook url")
-parser.add_argument("-msgamt", type=int, required=True, help="message amt")
+parser.add_argument("-msgamt", type=msgamt_type, required=True, help="message amt")
 parser.add_argument("-cont", type=str, required=True, help="message content")
 
 args = parser.parse_args()
@@ -35,8 +45,9 @@ print("""
  ▒▒▒▒▒▒▒▒▒     ▒▒▒▒▒   ▒▒▒▒▒▒▒▒ ▒▒▒▒▒      ▒▒▒▒▒▒▒▒▒   ▒███▒▒▒   ▒▒▒▒▒▒▒▒ ▒▒▒▒▒ ▒▒▒ ▒▒▒▒▒ ▒▒▒▒▒ ▒▒▒ ▒▒▒▒▒  ▒▒▒▒▒▒  ▒▒▒▒▒     
                                                        ▒███                                                                  
                                                        █████                                                                 
-                                                      ▒▒▒▒▒                                                                                       ▀                          ▀                                                       
-""")
+                                                      ▒▒▒▒▒                                                                                                                                                                      
+
+      """)
 
 
 while True:
@@ -57,17 +68,24 @@ def spam():
     }
 
 
-    
-    for i in range(msgamt):
-        response = requests.post(webhook, json=data)
-        if response.status_code == 204:
-            print(f"[INFO/SENT] Message {i+1} successfully sent.")
-            if i == 41:
-                # tried to fix rate limiting here but didnt work as i planned lol  
-                time.sleep(10)
-
-    
+    def send(i=None):
+        r = requests.post(webhook, json=data)
+        if r.status_code == 204:
+            print(f"[INFO/SENT] Message {i+1} sent successfully")
+            time.sleep(0.5)
         else:
-            print(f"[INFO/ERROR] Message {i+1} not sent. Status code: {response.status_code}")
+            print(f"[INFO/ERR] Message {i+1} not sent. {r.status_code}")
+
+    if msgamt == "inf":
+        i = 0
+        while True:
+            send(i)
+            i += 1
+
+    else:
+        for i in range(msgamt):
+            send(i)
+
+
 
 spam()
